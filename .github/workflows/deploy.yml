@@ -55,4 +55,12 @@ jobs:
           port: 22
           source: "."
           target: "/home1/${{ secrets.SSH_USERNAME }}/dev.${{ secrets.SSH_HOST }}"
-          rm: true
+          use_insecure_cipher: true
+          exclude: |
+            .env
+            .git/**
+            .github/**
+            node_modules/**
+            tests/**
+            .gitignore
+            .editorconfig
